@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hestia Group Information System</title>
+  <link rel="icon" href="hestialogo.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "DM Serif Text", serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 10px 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .language-selector {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+    }
+
+    .language-selector a {
+      text-decoration: none;
+      color: rgb(31, 24, 73);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .banner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      background-color: #fff;
+      background-image: linear-gradient(rgba(215, 212, 212, 0.3), rgba(215, 212, 212, 0.3)), url(apartment.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .login-title {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: rgb(31, 24, 73);
+    }
+
+    .roles {
+      width: 400px;
+      padding: 18px;
+      font-size: 18px;
+      border-radius: 15px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      margin-top: 10px;
+    }
+
+    .login-button {
+      margin-top: 30px;
+      padding: 15px 50px;
+      font-size: 22px;
+      background-color: rgb(31, 24, 73);
+      color: white;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="hestialogo.png" alt="Hestia Logo" class="logo" />
+    <div class="language-selector">
+      <span>Choose a language:</span>
+      <a href="#">EN</a>
+      <a href="#">EL</a>
+    </div>
+  </header>
+
+  <div class="banner">
+    <div class="login-title">Login to Hestia Group</div>
+
+    <select class="roles" id="roleSelect">
+      <option value="" disabled selected>Login as a ...</option>
+      <option value="ceo">CEO</option>
+      <option value="manager">Marketing Manager</option>
+      <option value="assistant">Marketing Assistant</option>
+      <option value="finance1">Finance Manager</option>
+      <option value="finance2">Finance Assistant</option>
+    </select>
+
+    <button class="login-button" onclick="login()">Log in</button>
+  </div>
+
+  <script>
+    function login() {
+      const role = document.getElementById("roleSelect").value;
+      if (!role) {
+        alert("Please enter a role to enter");
+      } else {
+        window.location.href = "homepage.html";
+      }
+    }
+  </script>
+</body>
+
+</html>
+
