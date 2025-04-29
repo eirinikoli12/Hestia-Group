@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Set Marketing Tasks</title>
+  <link rel="icon" href="logo.jpg" type="image/png">
+  <style>
+    body {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('logo.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    
+    }
+    form {
+      display: grid;
+      gap: 15px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 6px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .task {
+      border-left: 5px solid #3498db;
+      background: #f9f9f9;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+    }
+    .edit {
+      background: #27ae60;
+      color: white;
+    }
+
+    .delete {
+      background: #c0392b;
+      color: white;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 45px;
+    }
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);  /* 7 στήλες για 7 μέρες της εβδομάδας */
+      grid-gap: 10px;
+      margin-top: 20px;
+    }
+
+
+  </style>
+
+    <body>
+        <header>
+            <h1>Set Tasks</h1>
+        </header>
+
+     <div class="container">
+        <form id="taskForm">
+            <label for="taskStatus">New Task Title</label>
+            <input type="text" id="taskTitle" placeholder="Τίτλος Task" required>
+
+            <label for="taskStatus">Task Description</label>
+            <textarea id="taskDesc" placeholder="Description" rows="3" required></textarea>
+
+            <label for="taskStatus">Set task to manager assistant</label>
+            <input type="text" id="assignedTo" placeholder="Assignment to..." required>
+
+            <label for="taskStatus">Deadline Date</label>
+            <input type="date" id="deadline" required>
+
+            <label for="taskStatus">Task Status</label>
+            <select id="taskStatus" required>
+             <option value="On-hold">On hold</option>
+             <option value="In-progress">In progress</option>
+             <option value="Completed">Completed</option>
+            </select>              
+            
+        </form>
+        <h2>Task Preview</h2>
+        <div class="task">
+            <div>In progress</div>
+            <strong>Create Facebook Campaign</strong><br>
+            <em>Assigned:</em>Ms Mary Robis<br>
+            <em>Deadline:</em> 2025-05-10<br>
+            <p>Awareness campaign for a new product.</p>
+            <div class="actions">
+              <a href="edit-task.html" class="edit">Edit</a>
+              <a href="delete-task.html" class="delete">Delete</a>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Marketing Tasks - Calendar</h1>
+        
+            <div class="calendar">
+              <!-- Εβδομαδιαίες κεφαλίδες -->
+              <div class="day-header">Mon</div>
+              <div class="day-header">Tue</div>
+              <div class="day-header">Wed</div>
+              <div class="day-header">Thu</div>
+              <div class="day-header">Fri</div>
+              <div class="day-header">Sat</div>
+              <div class="day-header">Sun</div>
+        
+              <!-- Εβδομάδες του μήνα -->
+              <div class="day">
+                1
+                <div class="task anamonh">On hold - Facebook Campaign</div>
+              </div>
+              <div class="day">
+                2
+                <div class="task se-exelixi">In progress - Email Marketing</div>
+              </div>
+              <div class="day">
+                3
+                <div class="task olokliromeno">Completed - Google Ads</div>
+              </div>
+              <div class="day">
+                4
+                <div class="task anamonh">On hold- Instagram Ads</div>
+              </div>
+              <div class="day">
+                5
+                <div class="task se-exelixi">In progress - SEO Optimization</div>
+              </div>
+              <div class="day">
+                6
+                <!-- Κενό για το Σάββατο -->
+              </div>
+              <div class="day">
+                7
+                <!-- Κενό για την Κυριακή -->
+              </div>
+        <button type="submit">Submit Task</button>
+     </div>
+    </body>
+</head>
