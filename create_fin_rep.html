@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Financial Report</title>
+  <link rel="icon" href="logo.jpg" type="image/png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #2980b9;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #1c5980;
+    }
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .primary-btn {
+    font-size: 18px;
+    padding: 16px 24px;
+    background-color: #2ecc71;
+    }
+    .primary-btn:hover {
+    background-color: #27ae60;
+    }
+
+  </style>
+
+    <header>
+        <h1>Create Νew Financial Report</h1>
+      </header>
+      
+      <div class="container">
+        <form id="reportForm">
+          <label for="reportTitle">Report Title</label>
+          <input type="text" id="reportTitle" name="reportTitle" required>
+      
+          <label for="reportDate">Report Date</label>
+          <input type="date" id="reportDate" name="reportDate" required>
+      
+          <label for="reportType">Report Type</label>
+          <select id="reportType" name="reportType" required>
+            <option value="">-- Choose --</option>
+            <option value="monthly">Monthly</option>
+            <option value="quarterly">Per Three Months</option>
+            <option value="annual">Annual</option>
+          </select>
+      
+          <label for="uploadFile">Attach file (ex. Excel)</label>
+          <input type="file" id="uploadFile" name="uploadFile">
+      
+          <label for="notes">Notes-Comments</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Insert additional notes..."></textarea>
+
+          <label for="email">Share via Email</label>
+          <input type="email" id="email" placeholder="example@company.com">
+      
+          <button type="submit" class="primary-btn">Create and submit Report</button>
+
+
+          <div class="actions">
+            <button type="button" onclick="exportToPDF()">Extract as PDF</button>
+            <button type="button" onclick="details()">See details</button>
+            <button type="button" onclick="download()">Download file</button>
+          </div>
+
+        </form>
+
+     </div>
+
+      
+
+</head>
+<body>
