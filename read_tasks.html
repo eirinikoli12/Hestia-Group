@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="el">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Read your tasks</title>
+  <link rel="icon" href="styles/assets/hestialogo.png" type="image/png">
+ </head>
+ <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('styles/assets/apartment.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    header {
+      background-color: #2c3e50;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      backdrop-filter: blur(5px);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .task {
+      background-color: rgba(255,255,255,0.2);
+      border-left: 6px solid #3498db;
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      border-radius: 8px;
+    }
+
+    .task h3 {
+      margin: 0 0 5px;
+      font-size: 18px;
+    }
+
+    .task p {
+      margin: 3px 0;
+      font-size: 14px;
+    }
+
+    .status {
+      font-weight: bold;
+    }
+
+    .status.Αναμονή { color: #f1c40f; }
+    .status.ΣεΕξέλιξη { color: #3498db; }
+    .status.Ολοκληρωμένο { color: #2ecc71; }
+
+    .navbar {
+        width: 100%;
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: transparent;
+        box-shadow: none;
+        }
+        .navbar img {
+            height: 100px;
+            width: 100px;
+        }
+        .logo {
+            width: 400px;
+            height: 400px;
+        }
+        .status-control {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .status-label {
+            font-size: 12px;
+            color: #ecf0f1;
+            margin-bottom: 4px;
+        }
+
+        .status-select {
+            padding: 6px 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="styles/assets/logo.png" class="logo" alt="Hestia Logo">
+      </div>
+
+  <header>
+    <h1>Task Overview</h1>
+  </header>
+
+  <div class="container">
+    <h2>My Tasks:</h2>
+
+    <div class="task">
+      <h3>✔ Create New Campaign</h3>
+   
+      <p><strong>Deadline:</strong> 3 June 2025</p>
+      <p><strong>Status:</strong> <span class="status ΣεΕξέλιξη">In progress</span></p>
+      <p><strong>Priority:</strong> High</p>
+      <label for="status1" class="status-label">Change Status</label>
+      <select class="status-select">
+        <option value="Αναμονή">On hold</option>
+        <option value="Σε εξέλιξη" selected>In progress</option>
+        <option value="Ολοκληρωμένο">Completed</option>
+      </select>
+    </div>
+
+    <div class="task">
+      <h3>✔ Quarterly Economic Analysis</h3>
+      <p><strong>Deadline:</strong> 6 May 2025</p>
+      <p><strong>Status:</strong> <span class="status Αναμονή">On hold</span></p>
+      <p><strong>Priority:</strong> Μedium</p>
+
+      <label for="status1" class="status-label">Change Status</label>
+      <select class="status-select">
+        <option value="Αναμονή">On hold</option>
+        <option value="Σε εξέλιξη" selected>In progress</option>
+        <option value="Ολοκληρωμένο">Completed</option>
+      </select>
+    </div>
+
+    <div class="task">
+      <h3>✔ Approval of advertising content</h3>
+      <p><strong>Deadline:</strong> 1 May 2025</p>
+      <p><strong>Status:</strong> <span class="status Ολοκληρωμένο">Completed</span></p>
+      <p><strong>Priority:</strong> Low</p>
+      <label for="status1" class="status-label">Change Status</label>
+      <select class="status-select">
+        <option value="Αναμονή">On hold</option>
+        <option value="Σε εξέλιξη" selected>In progress</option>
+        <option value="Ολοκληρωμένο">Completed</option>
+      </select>
+    </div>
+  </div>
+
+</body>
+</html>
