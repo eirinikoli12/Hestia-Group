@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Details</title>
+    <link rel="stylesheet" href="styles/property_details.css">
+    <link rel="stylesheet" href="styles/header.css">
+ </head>
+
+<body>
+    <!--
+    <header class="header">  
+        <div class="header-left">
+            <img src="company-logo.png" alt="Company Logo" class="logo" />
+        </div> 
+        <div class="header-right"> 
+            <a href="login.html" class="home-button">Home</a>
+        </div>
+    </header>
+    -->
+    <div class="root">
+        <div class="main-container">
+            <header class="head">
+                    <img class="logo" src="styles/assets/logo.png" alt="Hestia Group"
+                        style="display: block;">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="https://tedxaueb.org/">Home</a></li>
+                    </ul>
+                </nav>
+               
+            </header>
+        </div>
+    </div>
+    <div class="property-container">
+        <h1>Property Details</h1>
+        <div class="property-info">
+            <p><strong>Code:</strong> <span id="code">Example Code</span></p>
+            <p><strong>Name:</strong> <span id="name">Example Name</span></p>
+            <p><strong>Address:</strong> <span id="address">Example Address</span></p>
+          </div>
+          
+          <div class="budget-status">
+            <h2>Budget Status</h2>
+            <p>
+              <strong>Status:</strong>
+              <span id="status" class="status">Approved</span>
+            </p>
+          </div>
+          <div class="image-slider">
+            <div class="slides">
+              <img src="styles/assets/apartment.jpg" alt="Image 1" />
+              <img src="path/to/image2.jpg" alt="Image 2" />
+              <img src="path/to/image3.jpg" alt="Image 3" />
+            </div>
+          </div>
+          
+          <div class="financial-reports">
+            <h2>Financial Reports</h2>
+            <ul id="file-list">
+              <li><a href="#">Report_1.pdf</a></li>
+              <li><a href="#">Report_2.pdf</a></li>
+            </ul>
+            <input type="file" id="file-upload" multiple style="display: none;" />
+          </div>
+          <div class="btns">
+            <button class="edit-button" onclick="enableEditing()">Edit Property Info</button>
+            <button class="save-button" onclick="saveChanges()" style="display: none;">Save Changes</button>
+            <a href="another-page.html"><button class="edit-button">Create New Financial Report</button></a>
+        </div>
+        </div>
+        
+        <script>
+          let newFiles = [];
+      
+          document.getElementById("file-upload").addEventListener("change", function() {
+            newFiles = [];
+            const files = this.files;
+            for (let i = 0; i < files.length; i++){
+              newFiles.push(files[i].name);
+            }
+          });
+      
+          function enableEditing() {
+            const fields = ['code', 'name', 'address'];
+            fields.forEach(field => {
+              const element = document.getElementById(field);
+              if (element) {
+                const input = document.createElement("input");
+                input.type = "text";
+                input.value = element.innerText;
+                input.id = "input-" + field;
+                element.parentNode.replaceChild(input, element);
+              }
+            });
+            
+            const statusSpan = document.getElementById("status");
+            if (statusSpan) {
+              const currentStatus = statusSpan.innerText.trim();
+              const select = document.createElement("select");
+              select.id = "input-status";
+              const options = ["Approved", "Denied", "Pending"];
+              options.forEach(optionValue => {
+                const option = document.createElement("option");
+                option.value = optionValue;
+                option.innerText = optionValue;
+                if (optionValue === currentStatus) {
+                  option.selected = true;
+                }
+                select.appendChild(option);
+              });
+              statusSpan.parentNode.replaceChild(select, statusSpan);
+            }
+            
+            document.getElementById("file-upload").style.display = "block";
+            
+            document.querySelector(".edit-button").style.display = "none";
+            document.querySelector(".save-button").style.display = "inline-block";
+          }
+      
+          function saveChanges() {
+            const fields = ['code', 'name', 'address'];
+            fields.forEach(field => {
+              const inputElem = document.getElementById("input-" + field);
+              if (inputElem) {
+                const span = document.createElement("span");
+                span.id = field;
+                span.innerText = inputElem.value;
+                inputElem.parentNode.replaceChild(span, inputElem);
+              }
+            });
+            
+            const selectElem = document.getElementById("input-status");
+            if (selectElem) {
+              const span = document.createElement("span");
+              span.id = "status";
+              span.className = "status";
+              span.innerText = selectElem.value;
+              selectElem.parentNode.replaceChild(span, selectElem);
+            }
+            
+            if (newFiles.length > 0) {
+              const fileList = document.getElementById("file-list");
+              newFiles.forEach(fileName => {
+                const li = document.createElement("li");
+                const a = document.createElement("a");
+                a.href = "#";
+                a.innerText = fileName;
+                li.appendChild(a);
+                fileList.appendChild(li);
+              });
+              newFiles = [];
+            }
+            
+            const fileInput = document.getElementById("file-upload");
+            fileInput.value = "";
+            fileInput.style.display = "none";
+            
+            document.querySelector(".edit-button").style.display = "inline-block";
+            document.querySelector(".save-button").style.display = "none";
+          }
+        </script>
+</body>
+</html>

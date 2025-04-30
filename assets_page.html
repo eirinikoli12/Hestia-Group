@@ -1,86 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="stylesheet" href="styles/mains.css">
-    <link rel="stylesheet" href="assets_page.css">
-    <script>
-        function myFunction() {
-          
-          var input, filter, table, tr, td, i, txtValue;
-          input = document.getElementById("search");
-          filter = input.value.toUpperCase();
-          table = document.getElementById("asset-log");
-          tr = table.getElementsByTagName("tr");
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Records</title>
+  <link rel="stylesheet" href="styles/assets_page.css">
+  <link rel="stylesheet" href="styles/header.css">
+</head>
+<body>
+  <div class="root">
+    <div class="main-container">
+        <header class="head">
+                <img class="logo" src="styles/assets/logo.png" alt="Hestia Group"
+                    style="display: block;">
+            <nav class="menu">
+                <ul>
+                    <li><a href="https://tedxaueb.org/">Home</a></li>
+                </ul>
+            </nav>
+           
+        </header>
+    </div>
+ </div>
+ <h1>Property Listings</h1>
+
+ <input type="text" id="searchInput" placeholder="Search for properties..." onkeyup="searchTable()">
+
+  <table id="propertyTable">
+    <thead>
+      <tr>
+        <th>Property Code</th>
+        <th>Property Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Code 1</td>
+        <td>Name 1</td>
+        <td><a href="property_detail1.html" class="btn">View Details</a></td>
+      </tr>
+      <tr>
+        <td>Code 2</td>
+        <td>Name 2</td>
+        <td><a href="property_detail2.html" class="btn">View Details</a></td>
+      </tr>
+      <tr>
+        <td>Code 3</td>
+        <td>Name 3</td>
+        <td><a href="property_detail3.html" class="btn">View Details</a></td>
+      </tr>
+      <tr>
+        <td>Code 4</td>
+        <td>Name 4</td>
+        <td><a href="property_detail3.html" class="btn">View Details</a></td>
+      </tr>
+      <tr>
+        <td>Code 5</td>
+        <td>Name 5</td>
+        <td><a href="property_detail3.html" class="btn">View Details</a></td>
+      </tr>
+      <tr>
+        <td>Code 6</td>
+        <td>Name 6</td>
+        <td><a href="property_detail3.html" class="btn">View Details</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    // This function filters the table rows based on the search input.
+    function searchTable() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toUpperCase();
+      var table = document.getElementById("propertyTable");
+      var tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows (starting at index 1 to skip the table header)
+      for (var i = 1; i < tr.length; i++) {
+        var tdCode = tr[i].getElementsByTagName("td")[0];
+        var tdName = tr[i].getElementsByTagName("td")[1];
         
+        if (tdCode || tdName) {
+          // Combine text from the code and name columns
+          var txtValue = (tdCode.textContent || tdCode.innerText) + " " + (tdName.textContent || tdName.innerText);
           
-          for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-              txtValue = td.textContent || td.innerText;
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-              } else {
-                tr[i].style.display = "none";
-              }
-            }
+          // Check if the filter text is found within this combined text
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
           }
         }
-        </script>
-</head>
-
-<body>
-    <div class="header">
-        <h1>Assets Log</h1>
-    </div>
-    
-    <!--<div class="search">
-        <input type="text" id="search" onkeyup="myFunction()" placeholder="Search for Properties">
-    </div> -->
-    <div class="assets">
-        <input type="text" id="search" onkeyup="myFunction()" placeholder="Search for Properties">
-        <table class="asset-log">
-            <tr>
-                <th>Property Code</th>
-                <th>Property Name</th>
-                <th>Address</th>
-                <th>See Property Data</th>
-              </tr>
-              <tr>
-                <td data-th="Asset Code">Property Code 1</td>
-                <td data-th="Asset Name">Property Name 1</td>
-                <td data-th="Address">Property Address 1</td>
-                <td data-th="See Asset Data">
-                    <button>View Asset Details</button>
-                </td>
-              </tr>
-              <tr>
-                <td data-th="Asset Code">Property Code 2</td>
-                <td data-th="Asset Name">Property Name 2</td>
-                <td data-th="Address">Property Address 2</td>
-                <td data-th="See Asset Data">
-                    <button>View Asset Details</button>
-                </td>
-              </tr>
-              <tr>
-                <td data-th="Asset Code">Property Code 3</td>
-                <td data-th="Asset Name">Property Name 3</td>
-                <td data-th="Address">Property Address 3</td>
-                <td data-th="See Asset Data">
-                    <button>View Asset Details</button>
-                </td>
-              </tr>
-              <tr>
-                <td data-th="Asset Code">Property Code 4</td>
-                <td data-th="Asset Name">Property Name 4</td>
-                <td data-th="Address">Property Address 4</td>
-                <td data-th="See Asset Data">
-                    <button>View Asset Details</button>
-                </td>
-              </tr>
-        </table>
-        
-        <button>Register New Property</button>
-    </div>
+      }
+    }
+  </script>
+  <div class="btns">
+    <button class="btn">Register New Property</button>
+  </div>
 </body>
 </html>
