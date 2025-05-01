@@ -4,39 +4,51 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Homepage of Hestia Group</title>
+    <title>Homepage of Hestia Group</title>
     <link rel="icon" href="styles/assets/hestialogo.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet" />
     <style>
         body {
+            font-family: "DM Serif Text", serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
-            font-family: Arial, sans-serif;
+            background-color: rgba(215, 212, 212, 0.3);
         }
 
         .navbar {
             width: 100%;
-            padding: 10px 30px;
-            position: absolute;
+            padding: 10px 40px;
+            position: fixed;
             top: 0;
             left: 0;
+            right: 0;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            background: transparent;
-            z-index: 10;
+            background-color: #2c3e50;
+            color: white;
+            z-index: 1000;
         }
 
         .navbar .logo {
             height: 60px;
         }
 
+        .navbar h1 {
+            margin: 0 auto;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            flex-grow: 1;
+        }
+
         .banner {
             width: 100%;
             min-height: 100vh;
-            background-image: linear-gradient(rgba(215, 212, 212, 0.3), rgba(215, 212, 212, 0.3)), url(apartment.jpg);
+            background-image: linear-gradient(rgba(215, 212, 212, 0.3), rgba(215, 212, 212, 0.3)), url(styles/assets/apartment.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -44,18 +56,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            /* Changes from center to flex-start */
-            padding-top: 50px;
-            /* Reduced from 100px to 50px */
-        }
-
-        .title {
-            font-size: 36px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-            /* Reduced margin-bottom */
-            text-align: center;
+            padding-top: 150px;
         }
 
         .button-container {
@@ -113,10 +114,13 @@
 
 <body>
     <div class="navbar">
-        <img src="styles/assets/logo.png" class="logo" alt="Hestia Logo" /> <a href="login.html"></a>
+        <a href="homepage.html">
+            <img src="styles/assets/logo.png" class="logo" alt="Hestia Logo" />
+        </a>
+        <h1>What are you searching for?</h1>
     </div>
+
     <div class="banner">
-        <h1 class="title">What are you searching for?</h1>
         <div class="button-container">
             <div class="row">
                 <a href="assets_page.html">
@@ -131,7 +135,7 @@
                         <span>Set a Task</span>
                     </div>
                 </a>
-                <a href="page3.html">
+                <a href="read_tasks.html">
                     <div class="button-box">
                         <img src="readtask.png" alt="Read Task" />
                         <span>Read Task</span>
@@ -146,10 +150,16 @@
                         <span>Notifications/News</span>
                     </div>
                 </a>
-                <a href="page5.html">
+                <a href="messages.html">
                     <div class="button-box">
                         <img src="message.png" alt="Messages" />
                         <span>Messages</span>
+                    </div>
+                </a>
+                <a href="information.html">
+                    <div class="button-box">
+                        <img src="info.png" alt="Information" />
+                        <span>Information</span>
                     </div>
                 </a>
             </div>

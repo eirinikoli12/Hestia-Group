@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notifications/News</title>
+    <link rel="icon" href="styles/assets/hestialogo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'DM Serif Text', serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('styles/assets/apartment.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .navbar {
+            width: 100%;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        .navbar img {
+            height: 100px;
+            width: 100px;
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        header {
+            background-color: #2c3e50;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 120px auto 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .announcement {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-left: 6px solid #3498db;
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+
+        .announcement h3 {
+            margin: 0 0 5px;
+            font-size: 18px;
+        }
+
+        .announcement p {
+            margin: 3px 0;
+            font-size: 14px;
+        }
+
+        .status {
+            font-weight: bold;
+        }
+
+        .status.Αναμονή {
+            color: #f1c40f;
+        }
+
+        .status.ΣεΕξέλιξη {
+            color: orangered;
+        }
+
+        .status.Ολοκληρωμένο {
+            color: #2ecc71;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="homepage.html">
+        <div class="navbar">
+            <img src="styles/assets/logo.png" alt="Hestia Logo">
+        </div>
+    </a>
+    <header>
+        <h1>Recent Announcements</h1>
+    </header>
+
+    <div class="container">
+        <h2>Latest News:</h2>
+
+        <div class="announcement">
+            <h3>✔ Property Sale in Ag.Panton, Kallithea</h3>
+            <p><strong>Announcement Date:</strong> 25 April 2025</p>
+            <p><strong>From:</strong>Finance Manager</p>
+            <p><strong>Status:</strong> <span class="status Ολοκληρωμένο">Completed</span></p>
+            <p><strong>Details:</strong> The property located in the area of Kallithea was sold from Marketing and Sales
+                team
+                of Hestia Goup for 2million euros.</p>
+        </div>
+
+        <div class="announcement">
+            <h3>✔ Marketing Campaign for Ag.Panton Apartments</h3>
+            <p><strong>Announcement Date:</strong> 28 April 2025</p>
+            <p><strong>From:</strong>Marketing Assistant</p>
+            <p><strong>Status:</strong> <span class="status Ολοκληρωμένο">Completed</span></p>
+            <p><strong>Details:</strong> A new marketing campaign to inform our customers, especially Chinese citizens
+                in Greece to know
+                the advantages of living in this area. Our aim is to engage more customers into buying one of the
+                properties. This video
+                is represented by Marketing and Sales Assistant in Greece, Veronica Guan.</p>
+        </div>
+
+        <div class="announcement">
+            <h3>✔ Construction Team travels to Hong Kong, China</h3>
+            <p><strong>Announcement Date:</strong>30 April 2025</p>
+            <p><strong>Status:</strong> <span class="status ΣεΕξέλιξη">InProgress</span></p>
+            <p><strong>Details:</strong>The Construction team travels to the headquarters of Taibo Investment to China
+                in order to come closer to their chinese fellows and discuss the business strategy that the greek department,
+                Hestia-Group has to follow.</p>
+        </div>
+    </div>
+</body>
+
+</html>
