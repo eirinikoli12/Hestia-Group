@@ -1,8 +1,10 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 20px;
-    background-color: #f4f4f4;
+    margin-top: 30px;
+    padding: 30px;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('../styles/assets/apartment.jpg');    
+    background-size: cover;
+    
   }
   
   .property-container {
@@ -23,7 +25,8 @@ body {
   }
   
   .property-info,
-  .budget-status {
+  .budget-status,
+  .budget {
     background-color: #fafafa;
     padding: 15px;
     border-radius: 6px;
@@ -45,17 +48,49 @@ body {
     font-size: 15px;
   }
 
+  .budget p {
+    font-size: 20px;
+  }
+
+  .budget span{
+    font-size: 15px;
+  }
+
   .financial-reports {
     background-color: #fafafa;
     padding: 15px;
     border-radius: 6px;
     grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
   }
   
   .property-info p,
   .budget-status p,
   .financial-reports p {
     margin-bottom: 10px;
+  }
+
+  .row{
+    flex-direction: grid;
+    display:flex;
+    margin-top:15px;
+    margin-bottom: 15px;
+  }
+  .financial-reports a{
+    text-decoration: none;
+    text-emphasis: none;
+  }
+
+  .financial-reports li{
+    list-style: none;
+    font-size: 20px;
+  }
+
+  .financial-reports button{
+    margin-right: 5px;
+    margin-left: 10px;
+    margin-top: -5px;
   }
   
   .status {
@@ -127,3 +162,4 @@ body {
     gap: 10px;
     grid-column: 1 / -1;
 }
+

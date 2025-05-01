@@ -1,34 +1,38 @@
+body {
+    padding-top: 100px; 
+    
+}
 .head {
-    width: 100%;
-    background: transparent;
-    backdrop-filter: none;
-    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #2c3e50;
     z-index: 1003;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0% 0%;
-    box-sizing: border-box;
-    margin-top: -40px;
+    gap: 20px;
+    width: 100%;
+    padding: 10px 30px;
+    margin-bottom: 25%;
 }
 
 .menu li {
-    margin-right: 25%;
-    padding-left: 10px;
     font-weight: bold;
     list-style: none;
     font-size: 30px;
+    margin-right: 60px;
 }
 
 .menu a {
     text-decoration: none;
     text-emphasis: none;
-    color:black;
+    color:white;
 }
 
 .logo {
-    width: 150px;      
-    height: 150px;     
-    object-fit: none;
+    width: 100px;      
+    height: 100px;     
     object-position: center;
 }
