@@ -1,6 +1,8 @@
 body {
     margin: 20px;
     font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url('../styles/assets/apartment.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
   
 h1 {
@@ -34,8 +36,8 @@ table {
   }
   
   thead th {
-    background-color: #cceeff; 
-    color: #000;             
+    background-color: #34495e; 
+    color: white;             
   }
   
   tbody tr {

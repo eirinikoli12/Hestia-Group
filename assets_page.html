@@ -69,23 +69,19 @@
   </table>
 
   <script>
-    // This function filters the table rows based on the search input.
     function searchTable() {
       var input = document.getElementById("searchInput");
       var filter = input.value.toUpperCase();
       var table = document.getElementById("propertyTable");
       var tr = table.getElementsByTagName("tr");
 
-      // Loop through all table rows (starting at index 1 to skip the table header)
       for (var i = 1; i < tr.length; i++) {
         var tdCode = tr[i].getElementsByTagName("td")[0];
         var tdName = tr[i].getElementsByTagName("td")[1];
         
         if (tdCode || tdName) {
-          // Combine text from the code and name columns
           var txtValue = (tdCode.textContent || tdCode.innerText) + " " + (tdName.textContent || tdName.innerText);
           
-          // Check if the filter text is found within this combined text
           if (txtValue.toUpperCase().indexOf(filter) > -1) {
             tr[i].style.display = "";
           } else {

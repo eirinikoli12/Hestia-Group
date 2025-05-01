@@ -48,6 +48,13 @@
               <span id="status" class="status">Approved</span>
             </p>
           </div>
+          <div class="budget">
+            <h2>Suggested Budget</h2>
+            <p>
+              <strong>Budget:</strong>
+              <span id="budget" class="budget">Example Budget</span>
+            </p>
+          </div>
           <div class="image-slider">
             <div class="slides">
               <img src="styles/assets/apartment.jpg" alt="Image 1" />
@@ -59,8 +66,14 @@
           <div class="financial-reports">
             <h2>Financial Reports</h2>
             <ul id="file-list">
-              <li><a href="#">Report_1.pdf</a></li>
-              <li><a href="#">Report_2.pdf</a></li>
+              <div class="row">
+                <li><a href="#">Report_1.pdf</a></li>
+                <a href="another-page.html"><button class="edit-button">Approve Report</button></a>
+              </div>
+              <div class="row">
+                <li><a href="#">Report_2.pdf</a></li>
+                <a href="another-page.html"><button class="edit-button">Approve Report</button></a>
+              </div>
             </ul>
             <input type="file" id="file-upload" multiple style="display: none;" />
           </div>
@@ -83,7 +96,7 @@
           });
       
           function enableEditing() {
-            const fields = ['code', 'name', 'address'];
+            const fields = ['code', 'name', 'address', 'budget'];
             fields.forEach(field => {
               const element = document.getElementById(field);
               if (element) {
@@ -93,6 +106,7 @@
                 input.id = "input-" + field;
                 element.parentNode.replaceChild(input, element);
               }
+            
             });
             
             const statusSpan = document.getElementById("status");
@@ -120,7 +134,7 @@
           }
       
           function saveChanges() {
-            const fields = ['code', 'name', 'address'];
+            const fields = ['code', 'name', 'address', 'budget'];
             fields.forEach(field => {
               const inputElem = document.getElementById("input-" + field);
               if (inputElem) {
