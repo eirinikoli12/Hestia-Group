@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Συχνές Ερωτήσεις</title>
+    <link rel="icon" href="styles/assets/hestialogo.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('styles/assets/apartment.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Μπλε navigation bar */
+        .navbar {
+            width: 100%;
+            height: 80px;
+            padding: 10px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #2c3e50;
+            /* σκουρο μπλε */
+        }
+
+        .navbar img {
+            height: 60px;
+            width: auto;
+        }
+
+        header {
+            color: white;
+            text-align: center;
+            padding: 40px 20px 20px;
+            margin-top: 100px;
+            /* Ώστε να μην κρύβεται από το fixed navbar */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            cursor: pointer;
+            padding: 15px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .answer {
+            display: none;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 0 0 8px 8px;
+            margin-top: -8px;
+            font-size: 15px;
+        }
+
+        .question:hover {
+            background-color: #1c5980;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="homepage.html">
+            <img src="styles/assets/logo.png" alt="Hestia Logo">
+        </a>
+    </div>
+
+    <header>
+        <h1>Συχνές Ερωτήσεις</h1>
+    </header>
+
+    <div class="container">
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">What is the use of Properties button in homepage?</div>
+            <div class="answer">The first button is used to have access to the properties that Hestia-Group already
+                owns. Some
+                members of the company are obliged to set a budget and update property status. Via this button you can
+                search
+                and update for property records, approve and set a budget.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">What is the use of Set a Task button in homepage?</div>
+            <div class="answer">This button was created mostly for the Marketing Department. Specifically, Marketing and
+                Sales
+                Manager has the responsibility to set tasks to her Assistants. However, this button can also be used by
+                the CEO
+                and use this way to set tasks to employees instead of WeChat.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">What is the use of Read a Task button in homepage?</div>
+            <div class="answer">With this button members are able to see clearly and in an organised way all of the
+                tasks that
+                they need to accomplish.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">What is the use of Notifications/News button in homepage?
+            </div>
+            <div class="answer">With this button members stay up-to-date with all of the important information that they
+                need
+                to know. Also, they are able to stay connected with the Chinese Company, Taibo Investment.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(this)">What is the use of Information button in homepage?</div>
+            <div class="answer">In this button is shared all of the information on how to use this Information System
+                efficiently.</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+
+</html>
