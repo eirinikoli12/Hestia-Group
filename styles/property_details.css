@@ -1,9 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
-    margin-top: 30px;
-    padding: 30px;
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('../styles/assets/apartment.jpg');    
-    background-size: cover;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../styles/assets/apartment.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     
   }
   
@@ -15,22 +15,29 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
+    max-width: 1700px; 
+    margin: 0 auto; 
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../styles/assets/apartment.jpg') no-repeat center center fixed;
+      background-size: cover;
+      padding-top: 0%;
   }
   
   .property-container h1 {
     grid-column: 1 / -1;
     margin-bottom: 20px;
     text-align: center;
-    color: #333;
+    color: white;
   }
   
   .property-info,
   .budget-status,
   .budget {
-    background-color: #fafafa;
+    background-color: #ffffff; /* πιο καθαρό και φωτεινό */
     padding: 15px;
     border-radius: 6px;
-  }
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* πιο έντονη σκιά */
+    border: 1px solid #ddd; /* διακριτικό περίγραμμα */
+    }
 
   .property-info p{
     font-size: 25px;
@@ -57,14 +64,13 @@ body {
   }
 
   .financial-reports {
-    background-color: #fafafa;
+      background-color: #ffffff; 
     padding: 15px;
     border-radius: 6px;
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;
-  }
-  
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd; 
+    }
+    
   .property-info p,
   .budget-status p,
   .financial-reports p {
